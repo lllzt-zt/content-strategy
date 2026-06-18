@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全职主妇自媒体创收 · 内容策略指南</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF7F0;
+    --cream-dark: #f0ebe0;
+    --coral: #D85A30;
+    --coral-light: #FAECE7;
+    --coral-dark: #993C1D;
+    --teal: #1D9E75;
+    --teal-light: #E1F5EE;
+    --teal-dark: #085041;
+    --plum: #7F77DD;
+    --plum-light: #EEEDFE;
+    --gold: #EF9F27;
+    --gold-light: #FAEEDA;
+    --rose: #D4537E;
+    --rose-light: #FBEAF0;
+    --ink: #2C2C2A;
+    --ink-soft: #5F5E5A;
+    --ink-light: #888780;
+    --ink-faint: #B4B2A9;
+    --white: #FFFFFF;
+    --border: rgba(0,0,0,.07);
+    --serif: 'Noto Serif SC', Georgia, 'Songti SC', serif;
+    --sans: 'Noto Sans SC', -apple-system, 'PingFang SC', system-ui, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.7;
+    padding: 0;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ─── Decorative elements ─── */
+  .ornament {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 48px 0 32px;
+  }
+  .ornament::before,
+  .ornament::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .ornament-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--coral);
+    opacity: .4;
+  }
+
+  .section-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+    margin-right: 12px;
+    flex-shrink: 0;
+  }
+
+  /* ─── Hero ─── */
+  .hero {
+    text-align: center;
+    padding: 80px 0 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60%;
+    left: -20%;
+    width: 140%;
+    height: 200%;
+    background: radial-gradient(ellipse at 50% 40%, var(--coral-light) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero > * { position: relative; z-index: 1; }
+
+  .hero-badge {
+    display: inline-block;
+    padding: 6px 18px;
+    border-radius: 100px;
+    background: var(--coral-light);
+    color: var(--coral-dark);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: .3px;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(28px, 5vw, 40px);
+    line-height: 1.3;
+    color: var(--ink);
+    margin-bottom: 16px;
+    letter-spacing: -.3px;
+  }
+
+  .hero h1 .highlight {
+    color: var(--coral);
+    position: relative;
+  }
+
+  .hero p {
+    font-size: 16px;
+    color: var(--ink-soft);
+    max-width: 520px;
+    margin: 0 auto 4px;
+    line-height: 1.8;
+  }
+
+  .hero .meta {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 32px;
+    font-size: 13px;
+    color: var(--ink-light);
+  }
+  .hero .meta span { display: flex; align-items: center; gap: 4px; }
+
+  /* ─── Sections ─── */
+  section { padding: 48px 0; }
+
+  section h2 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(22px, 3.5vw, 28px);
+    color: var(--ink);
+    margin-bottom: 8px;
+    letter-spacing: -.2px;
+  }
+
+  section h2 .emoji-label {
+    display: inline-block;
+    margin-right: 8px;
+  }
+
+  .section-sub {
+    font-size: 14px;
+    color: var(--ink-light);
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  section h3 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--ink);
+    margin-bottom: 10px;
+    margin-top: 28px;
+  }
+
+  section p, section li {
+    font-size: 14.5px;
+    line-height: 1.8;
+    color: var(--ink-soft);
+  }
+
+  /* ─── Niche Grid ─── */
+  .niche-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 24px 0 8px;
+  }
+
+  .niche-card {
+    padding: 18px 14px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--white);
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .niche-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,.06);
+  }
+
+  .niche-card .icon {
+    font-size: 22px;
+    margin-bottom: 6px;
+    display: block;
+  }
+  .niche-card .name {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+  .niche-card .tags {
+    font-size: 12px;
+    color: var(--ink-light);
+    line-height: 1.5;
+  }
+
+  /* ─── Color stripe cards ─── */
+  .tip-card {
+    display: flex;
+    gap: 16px;
+    padding: 20px 24px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    align-items: flex-start;
+  }
+
+  .tip-card.coral {
+    background: var(--coral-light);
+    border: 1px solid rgba(217,90,48,.15);
+  }
+  .tip-card.teal {
+    background: var(--teal-light);
+    border: 1px solid rgba(29,158,117,.15);
+  }
+  .tip-card.plum {
+    background: var(--plum-light);
+    border: 1px solid rgba(127,119,221,.15);
+  }
+  .tip-card.gold {
+    background: var(--gold-light);
+    border: 1px solid rgba(239,159,39,.15);
+  }
+  .tip-card.rose {
+    background: var(--rose-light);
+    border: 1px solid rgba(212,83,126,.15);
+  }
+
+  .tip-card .num {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1;
+    flex-shrink: 0;
+    min-width: 32px;
+  }
+  .tip-card.coral .num { color: var(--coral); }
+  .tip-card.teal .num { color: var(--teal); }
+  .tip-card.plum .num { color: var(--plum); }
+  .tip-card.gold .num { color: var(--gold); }
+  .tip-card.rose .num { color: var(--rose); }
+
+  .tip-card .card-title {
+    font-weight: 600;
+    font-size: 14.5px;
+    color: var(--ink);
+    margin-bottom: 3px;
+  }
+  .tip-card .card-desc {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+
+  /* ─── Timeline ─── */
+  .timeline { position: relative; padding-left: 40px; margin: 24px 0 16px; }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 17px;
+    top: 12px;
+    bottom: 12px;
+    width: 2px;
+    background: var(--border);
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-bottom: 28px;
+  }
+  .timeline-item:last-child { padding-bottom: 0; }
+
+  .timeline-dot {
+    position: absolute;
+    left: -40px;
+    top: 4px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--white);
+  }
+
+  .timeline-item:nth-child(1) .timeline-dot { background: var(--teal); }
+  .timeline-item:nth-child(2) .timeline-dot { background: #378ADD; }
+  .timeline-item:nth-child(3) .timeline-dot { background: var(--plum); }
+  .timeline-item:nth-child(4) .timeline-dot { background: var(--gold); }
+
+  .timeline-title {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+  .timeline-meta {
+    font-size: 12.5px;
+    color: var(--ink-light);
+    margin-bottom: 6px;
+  }
+  .timeline-desc {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+
+  /* ─── Action boxes ─── */
+  .action-card {
+    display: flex;
+    gap: 16px;
+    padding: 20px 24px;
+    border-radius: 12px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+
+  .action-card .step-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--coral);
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 600;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .action-card .action-title {
+    font-weight: 600;
+    font-size: 14.5px;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+  .action-card .action-desc {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+
+  /* ─── Motivation banner ─── */
+  .motivation {
+    background: linear-gradient(135deg, var(--coral-light) 0%, var(--cream) 50%, var(--teal-light) 100%);
+    border-radius: 16px;
+    padding: 40px 36px;
+    text-align: center;
+    margin: 48px 0;
+  }
+
+  .motivation h2 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+
+  .motivation p {
+    font-size: 15px;
+    color: var(--ink-soft);
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+
+  .motivation .big-emoji {
+    font-size: 48px;
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  /* ─── Monetization section ─── */
+  .stage-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin: 24px 0;
+  }
+
+  .stage-card {
+    display: flex;
+    gap: 18px;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--white);
+    align-items: flex-start;
+  }
+
+  .stage-card .stage-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .stage-card:nth-child(1) .stage-icon { background: var(--teal-light); }
+  .stage-card:nth-child(2) .stage-icon { background: #E6F1FB; }
+  .stage-card:nth-child(3) .stage-icon { background: var(--plum-light); }
+  .stage-card:nth-child(4) .stage-icon { background: var(--gold-light); }
+
+  .stage-card .stage-label {
+    font-weight: 600;
+    font-size: 14.5px;
+    color: var(--ink);
+    margin-bottom: 1px;
+  }
+  .stage-card .stage-period {
+    font-size: 12.5px;
+    color: var(--ink-light);
+    margin-bottom: 4px;
+  }
+  .stage-card .stage-income {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--coral);
+    margin-bottom: 4px;
+  }
+  .stage-card .stage-desc {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  /* ─── Time plan ─── */
+  .time-block {
+    background: var(--white);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    padding: 20px 24px;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .time-block .time-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .time-block .time-label {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--ink);
+  }
+  .time-block .time-desc {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+
+  /* ─── Schedule table ─── */
+  .schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 13.5px;
+  }
+  .schedule-table thead th {
+    text-align: left;
+    padding: 12px 16px;
+    font-weight: 600;
+    color: var(--ink);
+    background: var(--cream-dark);
+    border-bottom: 2px solid var(--border);
+  }
+  .schedule-table thead th:first-child { border-radius: 8px 0 0 0; }
+  .schedule-table thead th:last-child { border-radius: 0 8px 0 0; }
+
+  .schedule-table tbody td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  .schedule-table tbody tr:last-child td:first-child { border-radius: 0 0 0 8px; }
+  .schedule-table tbody tr:last-child td:last-child { border-radius: 0 0 8px 0; }
+
+  .schedule-table tbody tr:hover { background: rgba(0,0,0,.02); }
+
+  .schedule-table .month {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ─── Responsive ─── */
+  @media (max-width: 600px) {
+    .niche-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero { padding: 48px 0 40px; }
+    .hero .meta { flex-direction: column; gap: 8px; align-items: center; }
+    .motivation { padding: 32px 24px; }
+    .tip-card { flex-direction: column; gap: 10px; }
+    .action-card { flex-direction: column; gap: 10px; }
+    .stage-card { flex-direction: column; gap: 10px; }
+    .schedule-table { font-size: 12px; }
+    .schedule-table thead th,
+    .schedule-table tbody td { padding: 10px 12px; }
+    .time-block { flex-direction: column; gap: 8px; }
+    .timeline { padding-left: 32px; }
+    .timeline-dot { left: -32px; width: 28px; height: 28px; font-size: 10px; }
+  }
+
+  @media (max-width: 400px) {
+    .niche-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ─── Footer ─── */
+  footer {
+    text-align: center;
+    padding: 40px 0 56px;
+    border-top: 1px solid var(--border);
+    margin-top: 16px;
+  }
+
+  footer p {
+    font-size: 13px;
+    color: var(--ink-light);
+    line-height: 1.7;
+  }
+
+  footer .heart {
+    color: var(--coral);
+  }
+
+  /* ─── Print ─── */
+  @media print {
+    body { background: white; }
+    .hero::before { display: none; }
+    .niche-card:hover { transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">&#x2728; 专属定制 · 2026</div>
+  <h1>
+    全职主妇的<br>
+    <span class="highlight">自媒体创收</span>内容策略
+  </h1>
+  <p>从生活出发，用你每天都在做的事<br>
+  开启一份属于自己的事业</p>
+  <div class="meta">
+    <span>&#x1F933; 内容创作专家 出品</span>
+    <span>&#x1F9EC; 适用于小红书 / 抖音 / 视频号</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ─────── Section 1: Who ─────── -->
+  <section>
+    <h2><span class="emoji-label">&#x1F9D1;&#x200D;&#x1F3EB;</span> 这是你的专属指南</h2>
+    <p class="section-sub">基于你的个人情况量身定制</p>
+
+    <p>你是一位<strong>全职家庭主妇</strong>，目前<strong>怀孕中</strong>。你每天有空会做做饭、收拾收拾家里、煲煲剧——这些听起来稀松平常的事，正是你最好的内容素材。</p>
+    <p style="margin-top: 12px;">这个指南将帮你：</p>
+    <p style="margin-left: 20px;">&#x2714;&#xFE0F; 找到最适合你的内容方向<br>
+    &#x2714;&#xFE0F; 规划每天30-60分钟的创作节奏<br>
+    &#x2714;&#xFE0F; 从0开始一步步实现变现</p>
+  </section>
+
+  <div class="ornament"><span class="ornament-dot"></span><span class="ornament-dot"></span><span class="ornament-dot"></span></div>
+
+  <!-- ─────── Section 2: Niche ─────── -->
+  <section>
+    <h2><span class="emoji-label">&#x1F3AF;</span> 赛道选择：你的9大天然方向</h2>
+    <p class="section-sub">全职主妇的身份本身就是内容宝库——这些都是你天然具备优势的赛道</p>
+
+    <div class="niche-grid">
+      <div class="niche-card">
+        <span class="icon">&#x1F373;</span>
+        <div class="name">美食烹饪</div>
+        <div class="tags">家常菜 / 烘焙 / 减脂餐</div>
+      </div>
+      <div class="niche-card">
+        <span class="icon">&#x1F3E0;</span>
+        <div class="name">家居收纳</div>
+        <div class="tags">整理 / 清洁 / 空间改造</div>
+      </div>
+      <div class="niche-card">
+        <span class="icon">&#x1F476;</span>
+        <div class="name">育儿亲子</div>
+        <div class="tags">启蒙 / 辅食 / 亲子游戏</div>
+      </div>
+      <div class="niche-card">
+        <span class="icon">&#x1F4B0;</span>
+        <div class="name">省钱理财</div>
+        <div class="tags">记账 / 优惠 / 家庭财务</div>
+      </div>
+      <div class="niche-card">
+        <span class="icon">&#x1F4DA;</span>
+        <div class="name">自我提升</div>
+        <div class="tags">读书 / 时间管理 / 成长</div>
+      </div>
+      <div class="niche-card">
+        <span class="icon">&#x1F491;</span>
+        <div class="name">婚姻经营</div>
+        <div class="tags">夫妻相处 / 婆媳关系</div>
+      </div>
+      <div class="niche-card">
+        <span class="icon">&#x1F3AC;</span>
+        <div class="name">日常vlog</div>
+        <div class="tags">生活记录 / 家庭日常</div>
+      </div>
+      <div class="niche-card">
+        <span class="icon">&#x1F3A8;</span>
+        <div class="name">手工美育</div>
+        <div class="tags">手工 / 绘画 / 插花</div>
+      </div>
+      <div class="niche-card">
+        <span class="icon">&#x2728;</span>
+        <div class="name">好物分享</div>
+        <div class="tags">家居好物 / 测评推荐</div>
+      </div>
+    </div>
+
+    <h3>&#x1F4A1; 你的最佳定位：<strong>"孕期生活日记"</strong></h3>
+    <p>结合你正在<strong>怀孕中</strong>的这个特殊阶段，建议你以<strong>"孕期生活日记"</strong>为主线，将做饭、收拾等日常作为支线穿插其中。这是最好的入场时机——孕期内容天然高流量、高关注，而且随着宝宝出生会自然衍生出源源不断的新内容。</p>
+  </section>
+
+  <div class="ornament"><span class="ornament-dot"></span><span class="ornament-dot"></span><span class="ornament-dot"></span></div>
+
+  <!-- ─────── Section 3: Topics ─────── -->
+  <section>
+    <h2><span class="emoji-label">&#x1F4DD;</span> 6条立刻可用的爆款选题</h2>
+    <p class="section-sub">这些选题今天就可以拍，不需要任何准备</p>
+
+    <div class="tip-card coral">
+      <div class="num">01</div>
+      <div>
+        <div class="card-title">"怀孕XX周，我的身体发生了这些变化"</div>
+        <div class="card-desc">真实记录孕期变化，每周一篇，做成连载。这个系列自带"追更"属性，观众会期待你的下一期。</div>
+      </div>
+    </div>
+
+    <div class="tip-card teal">
+      <div class="num">02</div>
+      <div>
+        <div class="card-title">"待产包的极简清单"</div>
+        <div class="card-desc">对着镜头一件件展示你的待产包。实用干货内容收藏率极高，即使粉丝不多也能获得推荐流量。</div>
+      </div>
+    </div>
+
+    <div class="tip-card plum">
+      <div class="num">03</div>
+      <div>
+        <div class="card-title">"孕期做饭的3个小心机"</div>
+        <div class="card-desc">把你的厨艺爱好和孕期结合起来，打造独一无二的差异化内容角度。</div>
+      </div>
+    </div>
+
+    <div class="tip-card gold">
+      <div class="num">04</div>
+      <div>
+        <div class="card-title">"谁说孕妇不能收拾家？我的收纳挑战"</div>
+        <div class="card-desc">把收拾家和孕期相结合，既有看点又有共鸣。可以用Before/After增加视觉冲击。</div>
+      </div>
+    </div>
+
+    <div class="tip-card coral">
+      <div class="num">05</div>
+      <div>
+        <div class="card-title">"老公上班后，我一个人的4小时vlog"</div>
+        <div class="card-desc">真实感最强的类型。起床、做饭、收拾、休息——日常vlog是最容易上手也最容易获得共鸣的内容。</div>
+      </div>
+    </div>
+
+    <div class="tip-card rose">
+      <div class="num">06</div>
+      <div>
+        <div class="card-title">"煲剧时做的5款治愈小零食"</div>
+        <div class="card-desc">把你做饭和煲剧两个爱好串在一起——孕妈宅家解馋，这个切入点非常独特。</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ornament"><span class="ornament-dot"></span><span class="ornament-dot"></span><span class="ornament-dot"></span></div>
+
+  <!-- ─────── Section 4: Time Plan ─────── -->
+  <section>
+    <h2><span class="emoji-label">&#x23F0;</span> 每天30分钟的创作节奏</h2>
+    <p class="section-sub">不用焦虑没时间，碎片化创作也能出好内容</p>
+
+    <div class="time-block">
+      <div class="time-icon">&#x1F373;</div>
+      <div>
+        <div class="time-label">早上 10-15分钟：顺手拍素材</div>
+        <div class="time-desc">做早饭时把手机支架放厨房，拍下做饭过程。不需要策划，不需要脚本——你本来就在做饭，只是多了一个记录的动作。拍完5分钟的素材就够了。</div>
+      </div>
+    </div>
+
+    <div class="time-block">
+      <div class="time-icon">&#x2702;&#xFE0F;</div>
+      <div>
+        <div class="time-label">中午/下午 15-20分钟：剪辑发布</div>
+        <div class="time-desc">用剪映App把早上的素材剪成60秒以内的短视频，配好字幕和音乐。剪映有大量模板，套用模板3分钟就能出片。如果今天没有拍视频，拍一张收拾前后的对比图写文字笔记也可以。</div>
+      </div>
+    </div>
+
+    <div class="time-block">
+      <div class="time-icon">&#x1F4AC;</div>
+      <div>
+        <div class="time-label">晚上 10-15分钟：互动与复盘</div>
+        <div class="time-desc">睡觉前回复评论和私信，看看今天数据。记录下哪个话题互动最好，后面就多做类似内容。</div>
+      </div>
+    </div>
+
+    <h3>&#x1F381; 新手必装工具清单</h3>
+    <p style="margin-left: 20px;">&#x2022; <strong>剪映</strong> — 视频剪辑首选，买它的模板会员（很便宜），套模板3分钟出片<br>
+    &#x2022; <strong>轻颜 / 无他相机</strong> — 拍人像用，自带美颜不用自己调<br>
+    &#x2022; <strong>小红书</strong> — 首推平台，图文+短视频都支持，对新人最友好<br>
+    &#x2022; <strong>手机支架（八爪鱼款）</strong> — 可以架在任何地方，厨房台面、餐桌、床头</p>
+  </section>
+
+  <div class="ornament"><span class="ornament-dot"></span><span class="ornament-dot"></span><span class="ornament-dot"></span></div>
+
+  <!-- ─────── Section 5: Publishing Schedule ─────── -->
+  <section>
+    <h2><span class="emoji-label">&#x1F4C5;</span> 前3个月的发文节奏</h2>
+    <p class="section-sub">不用一上来就日更，稳定比频率更重要</p>
+
+    <table class="schedule-table">
+      <thead>
+        <tr>
+          <th>阶段</th>
+          <th>周更</th>
+          <th>内容配比</th>
+          <th>目标</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="month">第1个月</td>
+          <td>3-4条/周</td>
+          <td>60%孕期 + 40%日常</td>
+          <td>摸索手感，找到自己舒服的表达方式</td>
+        </tr>
+        <tr>
+          <td class="month">第2个月</td>
+          <td>4条/周</td>
+          <td>70%孕期 + 30%厨房/收纳</td>
+          <td>找到1-2个数据好的选题方向</td>
+        </tr>
+        <tr>
+          <td class="month">第3个月</td>
+          <td>4-5条/周</td>
+          <td>开始做"系列"内容</td>
+          <td>冲击1000粉，开通商品橱窗</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="ornament"><span class="ornament-dot"></span><span class="ornament-dot"></span><span class="ornament-dot"></span></div>
+
+  <!-- ─────── Section 6: Monetization ─────── -->
+  <section>
+    <h2><span class="emoji-label">&#x1F4B8;</span> 变现路线图</h2>
+    <p class="section-sub">变现是水到渠成的事，一步一个脚印</p>
+
+    <div class="stage-cards">
+      <div class="stage-card">
+        <div class="stage-icon">&#x1F331;</div>
+        <div>
+          <div class="stage-label">第一阶段：内容积累</div>
+          <div class="stage-period">第1-3个月</div>
+          <div class="stage-income">收入：0元</div>
+          <div class="stage-desc">目标500-1000粉丝。这个阶段不要想赚钱，只做一件事：持续发内容。每多一条，就更接近爆款。</div>
+        </div>
+      </div>
+
+      <div class="stage-card">
+        <div class="stage-icon">&#x1F4C8;</div>
+        <div>
+          <div class="stage-label">第二阶段：粉丝增长</div>
+          <div class="stage-period">第3-6个月</div>
+          <div class="stage-income">收入：500-2000元/月</div>
+          <div class="stage-desc">学习平台的流量规则，开始有爆款内容。可开通带货功能，分享你真实使用的母婴用品、厨房好物。</div>
+        </div>
+      </div>
+
+      <div class="stage-card">
+        <div class="stage-icon">&#x1F4AA;</div>
+        <div>
+          <div class="stage-label">第三阶段：稳定产出</div>
+          <div class="stage-period">第6-12个月</div>
+          <div class="stage-income">收入：5000-20000元/月</div>
+          <div class="stage-desc">粉丝破万，收到品牌合作邀约。可以做知识付费（比如"新手妈妈待产包课程"），也可以持续带货。内容体系化，收入多元化。</div>
+        </div>
+      </div>
+
+      <div class="stage-card">
+        <div class="stage-icon">&#x1F680;</div>
+        <div>
+          <div class="stage-label">第四阶段：个人IP</div>
+          <div class="stage-period">12个月后</div>
+          <div class="stage-income">收入：20000+元/月</div>
+          <div class="stage-desc">建立个人品牌，多渠道变现：品牌代言、自有课程、社群运营、甚至开自己的小品牌。</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>&#x1F4A1; 长期内容线路</h3>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot">1</div>
+        <div class="timeline-title">怀孕期 &rarr; 产后</div>
+        <div class="timeline-meta">现在 &rarr; 生完</div>
+        <div class="timeline-desc">记录孕期过程，积累粉丝。开通商品橱窗带货母婴用品，粉丝信任度高转化好。</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot">2</div>
+        <div class="timeline-title">月子 &rarr; 新生儿阶段</div>
+        <div class="timeline-meta">产后0-6个月</div>
+        <div class="timeline-desc">坐月子vlog、新生儿护理——这是内容流量的高峰期，所有准妈妈都在找这些内容。</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot">3</div>
+        <div class="timeline-title">宝宝辅食 &rarr; 育儿成长</div>
+        <div class="timeline-meta">产后6-24个月</div>
+        <div class="timeline-desc">宝宝的每个"第一次"都是素材。你的粉丝也同步升级为妈妈，一起成长。</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot">4</div>
+        <div class="timeline-title">进阶为育儿博主</div>
+        <div class="timeline-meta">2年后</div>
+        <div class="timeline-desc">品牌合作稳定，收入多元化。这时你已经是该领域有影响力的博主了。</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ornament"><span class="ornament-dot"></span><span class="ornament-dot"></span><span class="ornament-dot"></span></div>
+
+  <!-- ─────── Section 7: Action ─────── -->
+  <section>
+    <h2><span class="emoji-label">&#x1F3C3;</span> 今天就能做的3件事</h2>
+    <p class="section-sub">别想太多，从最微小的一步开始</p>
+
+    <div class="action-card">
+      <div class="step-num">1</div>
+      <div>
+        <div class="action-title">清空手机，下载工具</div>
+        <div class="action-desc">给手机腾出至少10GB空间，下载剪映App。建议买模板会员，省去剪辑学习成本。</div>
+      </div>
+    </div>
+
+    <div class="action-card">
+      <div class="step-num">2</div>
+      <div>
+        <div class="action-title">注册/激活小红书账号</div>
+        <div class="action-desc">头像用你的真实照片，简介里写"孕X周准妈妈 | 记录孕期生活 | 分享家庭日常"——一句话就让新粉知道你是谁、有什么好看。</div>
+      </div>
+    </div>
+
+    <div class="action-card">
+      <div class="step-num">3</div>
+      <div>
+        <div class="action-title">拍第一条内容</div>
+        <div class="action-desc">打开手机相机，对着镜头说"我怀孕X周了，今天一个人在家做早餐……" 不用脚本，不用布景，1分钟就够了。标题：《孕X周一个人的早餐 ｜ 全职主妇的日常》</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────── Motivation ─────── -->
+  <div class="motivation">
+    <span class="big-emoji">&#x2728;</span>
+    <h2>你最大的优势，就是你真实的生活</h2>
+    <p>怀孕、做饭、收拾家里、煲剧——这些不是你做自媒体的"障碍"，而是你独一无二的内容素材。<strong>真实永远是最好的内容。</strong>今天就从拍一件你本来就要做的事开始吧。</p>
+  </div>
+
+  <footer>
+    <p>内容创作专家 为你定制 &middot; 2026</p>
+    <p style="font-size: 12px;">本指南基于你的个人情况量身规划，每个阶段都可以根据实际反馈灵活调整</p>
+    <p style="margin-top: 12px;"><span class="heart">&hearts;</span> 期待你开始自己的故事</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
